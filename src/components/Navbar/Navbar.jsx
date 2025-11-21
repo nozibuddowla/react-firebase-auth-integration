@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router";
+import './Navbar.css'
 
 const Navbar = () => {
   const links = (
@@ -11,7 +12,7 @@ const Navbar = () => {
         <NavLink to="/login">Login</NavLink>
       </li>
       <li>
-        <NavLink to="/register">Login</NavLink>
+        <NavLink to="/register">Register</NavLink>
       </li>
     </>
   );
@@ -38,7 +39,7 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex="-1"
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            className="menu menu-compact dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
             {links}
           </ul>
