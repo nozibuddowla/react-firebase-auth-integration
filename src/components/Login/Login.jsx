@@ -5,22 +5,20 @@ import { AuthContext } from "../../contexts/AuthContext/AuthContext";
 const Login = () => {
   const { signInUser } = use(AuthContext);
 
-  const handleSignIn = () => {
+  const handleSignIn = (event) => {
     event.preventDefault();
 
     const email = event.target.email.value;
     const password = event.target.password.value;
 
     signInUser(email, password)
-      .then(result => {
+      .then((result) => {
         console.log(result.user);
-        
-      }
-      )
-      .catch(error => {
-      console.log(error);
-      
-    })
+        event.target.reset();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   return (
     <div className="card bg-base-100 w-full mx-auto max-w-sm shrink-0 shadow-2xl">
